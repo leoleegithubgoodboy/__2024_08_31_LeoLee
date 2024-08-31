@@ -2,4 +2,4 @@
 python程式與樹梅派
 
 ## 上課課教室網址
-[上課課教室網址](https://github.com/leoleegithubgoodboy/__2024_08_31_LeoLee)
+[上課課教室網址](https://meet.google.com/wuv-njsa-ejb)
