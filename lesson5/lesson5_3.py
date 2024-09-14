@@ -1,4 +1,4 @@
-def input_data()->tuple[int,int]:
+def input_data() -> tuple[int,int]:
     while True:
         try:    
             cm = int(input("請輸入身高(公分):"))
@@ -25,7 +25,7 @@ def input_data()->tuple[int,int]:
             continue
     return (cm,kg)  #tuple
 
-def get_status(BMI:float)->str:
+def get_status(BMI:float) -> str:
     
     if BMI >=35:
         return ("重度肥胖：BMI≧35")
@@ -40,16 +40,20 @@ def get_status(BMI:float)->str:
     else:
         return ("體重過輕")
     
+def calculate_bmi(kg:int,cm:int) -> float:
+    cm=(cm/100)*(cm/100)
+    BMI = kg/cm
+    return BMI
 while True:
     
     kg=0  #清除變數
     cm=0  #清除變數
+    
     cm,kg = input_data() #呼叫funtion
     print(f'身高={cm},體重={kg}')
-    cm=(cm/100)*(cm/100)
-    BMI=kg/cm
-    print(get_status(BMI))
-    #print(f'BMI={BMI}')
+    BMI = calculate_bmi(kg=kg,cm=cm) #引述名稱呼叫，可以不用依照順序
+    print(get_status(BMI)) #列印狀態
+    print(f'BMI={BMI}')
     play_agin = input("還要繼續嗎?(y/n)")
     if play_agin == "n":
         break
