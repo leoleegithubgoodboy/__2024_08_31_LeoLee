@@ -1,7 +1,6 @@
 from machine import Timer , Pin
 
 green_led = Pin("LED",Pin.OUT)
-
 green_count = 0
 def green_led_mycallback(t:Time):
     global green_count
@@ -16,8 +15,7 @@ def green_led_mycallback(t:Time):
 green_led_time = Timer(period = 1000,mode = Timer.PERIODIC,callback = green_led_mycallback)
 
 
-red_led = Pin("LED",Pin.OUT)
-
+red_led = Pin(15,Pin.OUT)
 red_count = 0
 def red_led_mycallback(t:Time):
     global red_count
@@ -27,5 +25,6 @@ def red_led_mycallback(t:Time):
     if red_count%2 == 0:
         print(f"目前red_led_mycallback被執行:{(int)(red_count/2)}次")
     if red_count >= 10:
+        red_led.off()
         t.deinit()
 red_led_time = Timer(period = 2000,mode = Timer.PERIODIC,callback = red_led_mycallback)
