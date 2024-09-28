@@ -16,7 +16,8 @@ def do_thing(t1):
     (year, month, day, hour, minute, second, microsecond, tzinfo)=rtc.datetime()
     datetime_str=f"{year}-{month}-{day}  {hour}:{minute}:{second}:{microsecond}_{tzinfo}"
     print(datetime_str)
-
+    print(tool.wlan.ifconfig())
+    print(f"status = {tool.wlan.status()}")
 def do_thing1(t2):
     pwm1 = PWM(Pin(15),freq=1000)
     adc1 = ADC(Pin(26))
