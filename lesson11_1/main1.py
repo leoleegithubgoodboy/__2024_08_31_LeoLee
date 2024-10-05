@@ -22,5 +22,5 @@ if __name__ == '__main__':
     SERVER = "192.168.0.252"
     CLIENT_ID = binascii.hexlify(machine.unique_id())
     TOPIC = b"SA-28/臥室/溫度"
-    
+    TOPIC = b"SA-28/臥室1/溫度1"
     main()
