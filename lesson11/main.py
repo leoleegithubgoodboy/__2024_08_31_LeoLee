@@ -6,7 +6,7 @@ led->gpio15
 內建溫度->adc最後1pin,共5pin
 '''
 
-import tool
+#import tool
 from machine import Pin, PWM, ADC , Timer ,RTC
 
 
@@ -49,10 +49,11 @@ def main():
     t2 = Timer(period=500, mode=Timer.PERIODIC, callback=do_thing1 )
 
 if __name__ == '__name__':
-    tool.connect()
+    #tool.connect()
     #rtc = RTC()
     adc = machine.ADC(4) #內建溫度
     adc1 = ADC(Pin(26)) #可變電阻
     adc_light = ADC(Pin(28)) #光線
     pwm1 = PWM(Pin(15),freq=1000) #pwm     
+    
     main()
