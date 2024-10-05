@@ -8,7 +8,7 @@ led->gpio15
 '''
 
 from machine import Timer,ADC,Pin,PWM,RTC
-
+import tool
 
 def do_thing(t):
     '''
@@ -36,8 +36,15 @@ def do_thing1(t):
     
 
 def main():
-    t1 = Timer(period=2000, mode=Timer.PERIODIC, callback=do_thing)
-    t2 = Timer(period=500, mode=Timer.PERIODIC, callback=do_thing1)
+    try:
+        tool.connect()
+    except RuntimeError as e:
+        print(e)
+    except Exception:
+        print("不知明錯誤")
+    else:
+        t1 = Timer(period=2000, mode=Timer.PERIODIC, callback=do_thing)
+        t2 = Timer(period=500, mode=Timer.PERIODIC, callback=do_thing1)
 
 if __name__ == '__main__':
     adc = ADC(4) #內建溫度
