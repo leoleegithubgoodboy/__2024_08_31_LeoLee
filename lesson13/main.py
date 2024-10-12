@@ -27,7 +27,7 @@ def do_thing(t):
     adc_value = adc_light.read_u16()
     print(f'光線:{adc_value}')
     mqtt.publish('SA-28/LIGHT', f'{adc_value}')
-    
+    #
 def do_thing1(t):
     '''
     :param t:Timer的實體
