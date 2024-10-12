@@ -26,7 +26,7 @@ def main():
 if __name__ == "__main__":
     #pico_連結電腦時的寫法,要用connect
     try:
-        tools.connect()
+        tool.connect()
     except RuntimeError as e:
         print(f"{{e}")
     else:
